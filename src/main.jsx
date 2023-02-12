@@ -6,7 +6,7 @@ import { store } from './store';
 // Providers
 import { Provider } from 'react-redux';
 // Components
-import App from './App';
+// import App from './App';
 import { PokemonApp } from './PokemonApp';
 // Styles
 import './index.css';
