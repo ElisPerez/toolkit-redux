@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const counterSlice = createSlice({
   name: 'mycounter',
   initialState: {
-    counter: 10,
+    count: 10,
   },
   reducers: {
     increment: state => {
@@ -13,12 +13,18 @@ export const counterSlice = createSlice({
       // Él en realidad no muta el estado porque usa la biblioteca Immer,
       // que detecta cambios en un "estado de borrador" y produce un nuevo
       // estado inmutable basado en esos cambios
-      state.counter += 1;
+      state.count += 1;
     },
+    incrementBy: (state, action) => {
+      state.count += action.payload;
+    },
+    decrement: (state) => {
+      state.count -= 1
+    }
   },
 });
 
 // Action creators: Las acciones se generan para cada función dentro del "reducers"
-export const { increment } = counterSlice.actions;
+export const { decrement, increment, incrementBy } = counterSlice.actions;
 
 // export default counterSlice.reducer;
