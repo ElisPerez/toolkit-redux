@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const todoApi = createApi({
+export const todosApi = createApi({
   reducerPath: 'todos',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://jsonplaceholder.typicode.com',
@@ -14,4 +14,4 @@ export const todoApi = createApi({
 });
 
 // useGetTodosQuery: Es un hook que fue creado automaticamente al definir un endpoint. use + EndpointName + Query >>> useGetTodosQuery
-export const { useGetTodosQuery } = todoApi;
+export const { useGetTodosQuery } = todosApi;
