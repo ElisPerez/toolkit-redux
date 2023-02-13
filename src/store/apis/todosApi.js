@@ -10,8 +10,11 @@ export const todosApi = createApi({
     getTodos: builder.query({
       query: () => '/todos', // => 'https://jsonplaceholder.typicode.com/todos'
     }),
+    getTodo: builder.query({
+      query: todoId => `/todos/${todoId}`,
+    }),
   }),
 });
 
 // useGetTodosQuery: Es un hook que fue creado automaticamente al definir un endpoint. use + EndpointName + Query >>> useGetTodosQuery
-export const { useGetTodosQuery } = todosApi;
+export const { useGetTodosQuery, useGetTodoQuery } = todosApi;
