@@ -14,6 +14,9 @@ export const TodoApp = () => {
   const [todoId, setTodoId] = useState(1);
   // RTK Query: desestructuramos algunas cosas que trae listas para usarlas 🤩
   // const { data: todos = [], isLoading } = useGetTodosQuery();
+  // ! LEEME: useGetTodoQuery es porque al crear la api le pusimos por nombre "getTodo"
+  // ! Entonces se le agrega el "use" y el "Query" antes y después de nuestro nombre elegido
+  // ! Quedando use + GetTodo + Query = useGetTodoQuery()
   const { data: todo, isLoading } = useGetTodoQuery(todoId);
 
   const prevTodo = () => {
